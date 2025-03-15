@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://bm6snj38novqt"]
+
+[ext_resource type="PackedScene" uid="uid://l44me4ibc55t" path="res://Models/GLB format/wall.glb" id="1_xxgf6"]
+[ext_resource type="PackedScene" uid="uid://dd0rmeu113g47" path="res://Models/GLB format/floor.glb" id="2_y4f30"]
+
+[node name="wall2" instance=ExtResource("1_xxgf6")]
+
+[node name="floor2" parent="." index="1" instance=ExtResource("2_y4f30")]
+
+[node name="floor3" parent="." index="2" instance=ExtResource("2_y4f30")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
