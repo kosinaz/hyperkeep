@@ -1,7 +1,7 @@
 extends Node3D
 
 # Export variables for tiling control
-@export var wall_tiling: float = 3.0
+@export var wall_tiling: float = 1.0
 @export var floor_tiling: float = 3.0
 @export var ceiling_tiling: float = 3.0
 @export var height_scale: float = 0.01

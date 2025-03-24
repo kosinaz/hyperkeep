@@ -23,7 +23,7 @@
 [resource]
 render_priority = 0
 shader = ExtResource("1_jk4wr")
-shader_parameter/wall_tiling = 3.0
+shader_parameter/wall_tiling = 1.0
 shader_parameter/floor_tiling = 3.0
 shader_parameter/ceiling_tiling = 3.0
 shader_parameter/wall_diffuse = ExtResource("2_a3f7d")
