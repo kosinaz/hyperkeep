@@ -33,6 +33,7 @@ size = Vector3(1, 0.1, 0.1)
 [node name="Stairs" type="Node3D"]
 
 [node name="StairsShape" type="CSGCombiner3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
 
 [node name="Step1" type="CSGBox3D" parent="StairsShape"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.05, -0.45)
@@ -75,6 +76,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.95, 0.45)
 size = Vector3(1, 0.1, 0.1)
 
 [node name="StairsBody" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
 
 [node name="CollisionShape1" type="CollisionShape3D" parent="StairsBody"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.05, -0.45)
