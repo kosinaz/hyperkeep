@@ -1,0 +1,47 @@
+[gd_resource type="ShaderMaterial" load_steps=20 format=3 uid="uid://bxr8y6n2p3qmv"]
+
+[ext_resource type="Shader" uid="uid://cx74rfuxyhgqn" path="res://wall_shader.gdshader" id="1_jk4wr"]
+[ext_resource type="Texture2D" uid="uid://i421xyivf2a0" path="res://textures/wall_1/wall_diffuse.bmp" id="2_a3f7d"]
+[ext_resource type="Texture2D" uid="uid://cwlegrbjw5f1a" path="res://textures/wall_1/wall_edge.bmp" id="3_u6m2p"]
+[ext_resource type="Texture2D" uid="uid://ctrvamdbxxiv4" path="res://textures/wall_1/wall_height.bmp" id="4_r5s2q"]
+[ext_resource type="Texture2D" uid="uid://dukjs2cfc1xq3" path="res://textures/wall_1/wall_metallic.bmp" id="5_y8d3v"]
+[ext_resource type="Texture2D" uid="uid://bftrpchx8xojo" path="res://textures/wall_1/wall_normal.bmp" id="6_k2d7f"]
+[ext_resource type="Texture2D" uid="uid://ctmht8qnet1a3" path="res://textures/wall_1/wall_smoothness.bmp" id="7_p4m2r"]
+[ext_resource type="Texture2D" uid="uid://d1sho7f1sv88w" path="res://textures/floor_1/floor_diffuse.bmp" id="8_v3e2s"]
+[ext_resource type="Texture2D" uid="uid://bbchu1of6a8p0" path="res://textures/floor_1/floor_edge.bmp" id="9_t5f6w"]
+[ext_resource type="Texture2D" uid="uid://pa5t871lfvij" path="res://textures/floor_1/floor_height.bmp" id="10_n8d3r"]
+[ext_resource type="Texture2D" uid="uid://cujvon7edsv81" path="res://textures/floor_1/floor_metallic.bmp" id="11_j6m4p"]
+[ext_resource type="Texture2D" uid="uid://b0pxkbyx2uwxy" path="res://textures/floor_1/floor_normal.bmp" id="12_w2d5t"]
+[ext_resource type="Texture2D" uid="uid://db3jbwvj1878o" path="res://textures/floor_1/floor_smoothness.bmp" id="13_a7f6e"]
+[ext_resource type="Texture2D" uid="uid://o1tpyt4jlfdi" path="res://textures/ceiling_1/ceiling_diffuse.bmp" id="14_b3d7s"]
+[ext_resource type="Texture2D" uid="uid://bq3egq1xh6flg" path="res://textures/ceiling_1/ceiling_edge.bmp" id="15_c4e8p"]
+[ext_resource type="Texture2D" uid="uid://bd5d3bx212d0k" path="res://textures/ceiling_1/ceiling_height.bmp" id="16_d5f9q"]
+[ext_resource type="Texture2D" uid="uid://d1csboj0j10ub" path="res://textures/ceiling_1/ceiling_metallic.bmp" id="17_e6g7r"]
+[ext_resource type="Texture2D" uid="uid://w081dm3kdl2l" path="res://textures/ceiling_1/ceiling_normal.bmp" id="18_f7h8s"]
+[ext_resource type="Texture2D" uid="uid://d2tjlr806midd" path="res://textures/ceiling_1/ceiling_smoothness.bmp" id="19_g8i9t"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_jk4wr")
+shader_parameter/wall_tiling = 3.0
+shader_parameter/floor_tiling = 3.0
+shader_parameter/ceiling_tiling = 3.0
+shader_parameter/wall_diffuse = ExtResource("2_a3f7d")
+shader_parameter/wall_edge = ExtResource("3_u6m2p")
+shader_parameter/wall_height = ExtResource("4_r5s2q")
+shader_parameter/wall_metallic = ExtResource("5_y8d3v")
+shader_parameter/wall_normal = ExtResource("6_k2d7f")
+shader_parameter/wall_smoothness = ExtResource("7_p4m2r")
+shader_parameter/floor_diffuse = ExtResource("8_v3e2s")
+shader_parameter/floor_edge = ExtResource("9_t5f6w")
+shader_parameter/floor_height = ExtResource("10_n8d3r")
+shader_parameter/floor_metallic = ExtResource("11_j6m4p")
+shader_parameter/floor_normal = ExtResource("12_w2d5t")
+shader_parameter/floor_smoothness = ExtResource("13_a7f6e")
+shader_parameter/ceiling_diffuse = ExtResource("14_b3d7s")
+shader_parameter/ceiling_edge = ExtResource("15_c4e8p")
+shader_parameter/ceiling_height = ExtResource("16_d5f9q")
+shader_parameter/ceiling_metallic = ExtResource("17_e6g7r")
+shader_parameter/ceiling_normal = ExtResource("18_f7h8s")
+shader_parameter/ceiling_smoothness = ExtResource("19_g8i9t")
+shader_parameter/height_scale = 0.01

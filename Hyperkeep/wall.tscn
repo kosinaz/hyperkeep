@@ -1,11 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://bm6snj38novqt"]
+[gd_scene load_steps=4 format=3 uid="uid://b6o8xvj5rq7gx"]
 
-[ext_resource type="PackedScene" uid="uid://l44me4ibc55t" path="res://Models/GLB format/wall.glb" id="1_xxgf6"]
-[ext_resource type="PackedScene" uid="uid://dd0rmeu113g47" path="res://Models/GLB format/floor.glb" id="2_y4f30"]
+[ext_resource type="Material" uid="uid://bxr8y6n2p3qmv" path="res://wall_material.tres" id="1_a2b3c"]
+[ext_resource type="Script" uid="uid://w33xd420d10e" path="res://wall.gd" id="2_d4e5f"]
 
-[node name="wall2" instance=ExtResource("1_xxgf6")]
+[sub_resource type="BoxMesh" id="BoxMesh_q7r8d"]
 
-[node name="floor2" parent="." index="1" instance=ExtResource("2_y4f30")]
+[node name="WallScene" type="Node3D"]
 
-[node name="floor3" parent="." index="2" instance=ExtResource("2_y4f30")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+[node name="WallBlock" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_q7r8d")
+surface_material_override/0 = ExtResource("1_a2b3c")
+script = ExtResource("2_d4e5f")
+material_resource = ExtResource("1_a2b3c")
