@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://b68crp8t4vieq"]
+[gd_scene load_steps=3 format=3 uid="uid://b68crp8t4vieq"]
 
 [ext_resource type="PackedScene" uid="uid://ddaykawcpe3kp" path="res://map.tscn" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://b3pbwr715we5e" path="res://player.tscn" id="2_j8k9l"]
 
 [node name="Main" type="Node3D"]
 
@@ -8,24 +9,23 @@
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 2)
-light_color = Color(0.19723, 0.19723, 4.81308e-08, 1)
+light_color = Color(0.45098, 0.45098, 0.45098, 1)
 omni_range = 2.0
 
 [node name="OmniLight3D2" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 4)
-light_color = Color(0.19723, 0.19723, 4.81308e-08, 1)
+light_color = Color(0.45098, 0.45098, 0.45098, 1)
 omni_range = 2.0
 
 [node name="OmniLight3D3" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
-light_color = Color(0.19723, 0.19723, 4.81308e-08, 1)
+light_color = Color(0.45098, 0.45098, 0.45098, 1)
 omni_range = 2.0
 
 [node name="OmniLight3D4" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0.5, 1)
-light_color = Color(0.19723, 0.19723, 4.81308e-08, 1)
+light_color = Color(0.45, 0.45, 0.45, 1)
 omni_range = 2.0
 
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 4)
-current = true
+[node name="Player" parent="." instance=ExtResource("2_j8k9l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 4)
