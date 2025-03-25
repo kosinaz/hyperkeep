@@ -1,4 +1,4 @@
-extends Node3D
+class_name Wall extends Node3D
 
 # Export variables for tiling control
 @export var wall_tiling: float = 1.0

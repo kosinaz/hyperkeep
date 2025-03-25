@@ -1,4 +1,6 @@
-[gd_scene load_steps=11 format=3 uid="uid://bdmmwhkah4e2h"]
+[gd_scene load_steps=12 format=3 uid="uid://bdmmwhkah4e2h"]
+
+[ext_resource type="Material" uid="uid://bxr8y6n2p3qmv" path="res://wall_material.tres" id="1_l5oqe"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_step1"]
 size = Vector3(1, 0.1, 0.1)
@@ -38,42 +40,52 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
 [node name="Step1" type="CSGBox3D" parent="StairsShape"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.05, -0.45)
 size = Vector3(1, 0.1, 0.1)
+material = ExtResource("1_l5oqe")
 
 [node name="Step2" type="CSGBox3D" parent="StairsShape"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, -0.35)
 size = Vector3(1, 0.1, 0.1)
+material = ExtResource("1_l5oqe")
 
 [node name="Step3" type="CSGBox3D" parent="StairsShape"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, -0.25)
 size = Vector3(1, 0.1, 0.1)
+material = ExtResource("1_l5oqe")
 
 [node name="Step4" type="CSGBox3D" parent="StairsShape"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.35, -0.15)
 size = Vector3(1, 0.1, 0.1)
+material = ExtResource("1_l5oqe")
 
 [node name="Step5" type="CSGBox3D" parent="StairsShape"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.45, -0.05)
 size = Vector3(1, 0.1, 0.1)
+material = ExtResource("1_l5oqe")
 
 [node name="Step6" type="CSGBox3D" parent="StairsShape"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.55, 0.05)
 size = Vector3(1, 0.1, 0.1)
+material = ExtResource("1_l5oqe")
 
 [node name="Step7" type="CSGBox3D" parent="StairsShape"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.65, 0.15)
 size = Vector3(1, 0.1, 0.1)
+material = ExtResource("1_l5oqe")
 
 [node name="Step8" type="CSGBox3D" parent="StairsShape"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0.25)
 size = Vector3(1, 0.1, 0.1)
+material = ExtResource("1_l5oqe")
 
 [node name="Step9" type="CSGBox3D" parent="StairsShape"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.85, 0.35)
 size = Vector3(1, 0.1, 0.1)
+material = ExtResource("1_l5oqe")
 
 [node name="Step10" type="CSGBox3D" parent="StairsShape"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.95, 0.45)
 size = Vector3(1, 0.1, 0.1)
+material = ExtResource("1_l5oqe")
 
 [node name="StairsBody" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
