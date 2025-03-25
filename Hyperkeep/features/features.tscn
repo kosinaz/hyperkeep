@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://danx02ksdnaqj"]
+
+[ext_resource type="Script" uid="uid://brgx2ymd1ihu2" path="res://features/features.gd" id="1_6gwt4"]
+[ext_resource type="PackedScene" uid="uid://gspq4nip321k" path="res://features/corridor.tscn" id="1_ihh26"]
+[ext_resource type="PackedScene" uid="uid://blnwr34i2sy4r" path="res://features/stairs_corridor.tscn" id="3_3qssm"]
+
+[node name="Features" type="Node3D"]
+script = ExtResource("1_6gwt4")
+
+[node name="Corridor" parent="." instance=ExtResource("1_ihh26")]
+visible = false
+
+[node name="StairsCorridor" parent="." instance=ExtResource("3_3qssm")]

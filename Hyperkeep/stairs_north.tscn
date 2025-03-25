@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bgbs50cdmv2sj"]
+
+[ext_resource type="PackedScene" uid="uid://bdmmwhkah4e2h" path="res://stairs.tscn" id="1_jqi43"]
+
+[node name="StairsNorth" type="Node3D"]
+
+[node name="Stairs" parent="." instance=ExtResource("1_jqi43")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, 0)

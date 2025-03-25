@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://t6pwtr7h8wen"]
+
+[ext_resource type="Script" uid="uid://dpeeoeaswy35q" path="res://void.gd" id="1_u8be3"]
+
+[node name="Void" type="Node3D"]
+script = ExtResource("1_u8be3")
