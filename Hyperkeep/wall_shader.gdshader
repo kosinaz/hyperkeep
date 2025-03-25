@@ -46,7 +46,8 @@ void fragment() {
         // Top or bottom face
         if (world_normal.y > 0.0) {
             // Top face (floor)
-            tiled_uv = UV * floor_tiling;
+            // Use world position to create continuous UVs for seamless tiling
+            tiled_uv = world_pos.xz * floor_tiling;
             ALBEDO = texture(floor_diffuse, tiled_uv).rgb;
             METALLIC = texture(floor_metallic, tiled_uv).r * 0.3;
             ROUGHNESS = 1.0 - (texture(floor_smoothness, tiled_uv).r * 0.8);

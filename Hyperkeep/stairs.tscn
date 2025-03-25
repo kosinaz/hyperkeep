@@ -1,36 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://bdmmwhkah4e2h"]
+[gd_scene load_steps=3 format=3 uid="uid://bdmmwhkah4e2h"]
 
 [ext_resource type="Material" uid="uid://bxr8y6n2p3qmv" path="res://wall_material.tres" id="1_l5oqe"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_step1"]
-size = Vector3(1, 0.1, 0.1)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_step2"]
-size = Vector3(1, 0.1, 0.1)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_step3"]
-size = Vector3(1, 0.1, 0.1)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_step4"]
-size = Vector3(1, 0.1, 0.1)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_step5"]
-size = Vector3(1, 0.1, 0.1)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_step6"]
-size = Vector3(1, 0.1, 0.1)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_step7"]
-size = Vector3(1, 0.1, 0.1)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_step8"]
-size = Vector3(1, 0.1, 0.1)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_step9"]
-size = Vector3(1, 0.1, 0.1)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_step10"]
-size = Vector3(1, 0.1, 0.1)
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_l5oqe"]
+points = PackedVector3Array(-0.5, 0, -0.5, 0.5, 0, -0.5, -0.5, 0, 0.5, 0.5, 0, 0.5, -0.5, 1, 0.5, 0.5, 1, 0.5)
 
 [node name="Stairs" type="Node3D"]
 
@@ -91,41 +64,5 @@ material = ExtResource("1_l5oqe")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
 
 [node name="CollisionShape1" type="CollisionShape3D" parent="StairsBody"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.05, -0.45)
-shape = SubResource("BoxShape3D_step1")
-
-[node name="CollisionShape2" type="CollisionShape3D" parent="StairsBody"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, -0.35)
-shape = SubResource("BoxShape3D_step2")
-
-[node name="CollisionShape3" type="CollisionShape3D" parent="StairsBody"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, -0.25)
-shape = SubResource("BoxShape3D_step3")
-
-[node name="CollisionShape4" type="CollisionShape3D" parent="StairsBody"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.35, -0.15)
-shape = SubResource("BoxShape3D_step4")
-
-[node name="CollisionShape5" type="CollisionShape3D" parent="StairsBody"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.45, -0.05)
-shape = SubResource("BoxShape3D_step5")
-
-[node name="CollisionShape6" type="CollisionShape3D" parent="StairsBody"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.55, 0.05)
-shape = SubResource("BoxShape3D_step6")
-
-[node name="CollisionShape7" type="CollisionShape3D" parent="StairsBody"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.65, 0.15)
-shape = SubResource("BoxShape3D_step7")
-
-[node name="CollisionShape8" type="CollisionShape3D" parent="StairsBody"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0.25)
-shape = SubResource("BoxShape3D_step8")
-
-[node name="CollisionShape9" type="CollisionShape3D" parent="StairsBody"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.85, 0.35)
-shape = SubResource("BoxShape3D_step9")
-
-[node name="CollisionShape10" type="CollisionShape3D" parent="StairsBody"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.95, 0.45)
-shape = SubResource("BoxShape3D_step10")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.00206447, 0.00353023)
+shape = SubResource("ConvexPolygonShape3D_l5oqe")
