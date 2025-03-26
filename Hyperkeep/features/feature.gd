@@ -9,6 +9,8 @@ enum Cells {
 	STAIRS_N,
 	STAIRS_S,
 	STAIRS_E,
+	FILLABLE_VOID,
+	FILLABLE_WALL,
 }
 
 func _ready() -> void:
@@ -23,6 +25,10 @@ func _ready() -> void:
 					open_cells.append(Vector3i(child.position))
 			if child.name.begins_with("Wall"):
 				cells[Vector3i(child.position)] = Cells.WALL
+			if child.name.begins_with("FillableVoid"):
+				cells[Vector3i(child.position)] = Cells.FILLABLE_VOID
+			if child.name.begins_with("FillableWall"):
+				cells[Vector3i(child.position)] = Cells.FILLABLE_WALL
 			if child.name.begins_with("StairsWest"):
 				cells[Vector3i(child.position)] = [2, 3, 4, 5][i]
 			if child.name.begins_with("StairsEast"):

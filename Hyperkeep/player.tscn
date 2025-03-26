@@ -21,3 +21,4 @@ current = true
 target_position = Vector3(0, 0, -2)
 
 [node name="OmniLight3D" type="OmniLight3D" parent="Camera3D"]
+omni_range = 10.0

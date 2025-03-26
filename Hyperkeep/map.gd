@@ -1,8 +1,8 @@
 extends Node3D
 
-@export var width: int = 15  # Number of cells in X direction
+@export var width: int = 29  # Number of cells in X direction
 @export var height: int = 15  # Number of levels in Y direction
-@export var depth: int = 15  # Number of cells in Z direction
+@export var depth: int = 29  # Number of cells in Z direction
 @export var wall_scene: PackedScene = preload("res://wall.tscn")
 @export var stairs_e_scene: PackedScene = preload("res://stairs_east.tscn")
 @export var stairs_w_scene: PackedScene = preload("res://stairs_west.tscn")
@@ -17,6 +17,8 @@ enum Cells {
 	STAIRS_N,
 	STAIRS_S,
 	STAIRS_E,
+	FILLABLE_VOID,
+	FILLABLE_WALL,
 }
 
 var map: Dictionary = {}
@@ -65,7 +67,13 @@ func generate_map():
 					available = false
 					continue
 				# Skip if cell is already carved
-				if not map[cell + feature_cell] == Cells.WALL:
+				var current_cell = feature.cells[feature_cell]
+				var next_cell = map[cell + feature_cell]
+				if not (
+					next_cell == Cells.WALL or
+					(next_cell == Cells.FILLABLE_VOID and current_cell == Cells.VOID) or
+					(next_cell == Cells.FILLABLE_WALL and current_cell == Cells.WALL)
+				):
 					available = false
 					continue
 			# Only add as available if all cells of the feature are available

@@ -1,0 +1,37 @@
+[gd_scene load_steps=4 format=3 uid="uid://c1x1svhr5b6kr"]
+
+[ext_resource type="Material" uid="uid://bxr8y6n2p3qmv" path="res://wall_material.tres" id="1_0kyds"]
+[ext_resource type="Script" uid="uid://w33xd420d10e" path="res://wall.gd" id="2_b6fww"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_1u7gr"]
+size = Vector3(1, 0.1, 0.1)
+
+[node name="FillableWall" type="Node3D"]
+
+[node name="WallBlock" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.5)
+mesh = SubResource("BoxMesh_1u7gr")
+surface_material_override/0 = ExtResource("1_0kyds")
+script = ExtResource("2_b6fww")
+material_resource = ExtResource("1_0kyds")
+
+[node name="WallBlock4" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.5)
+mesh = SubResource("BoxMesh_1u7gr")
+surface_material_override/0 = ExtResource("1_0kyds")
+script = ExtResource("2_b6fww")
+material_resource = ExtResource("1_0kyds")
+
+[node name="WallBlock2" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.5, 0, 0)
+mesh = SubResource("BoxMesh_1u7gr")
+surface_material_override/0 = ExtResource("1_0kyds")
+script = ExtResource("2_b6fww")
+material_resource = ExtResource("1_0kyds")
+
+[node name="WallBlock5" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.5, 0, 0)
+mesh = SubResource("BoxMesh_1u7gr")
+surface_material_override/0 = ExtResource("1_0kyds")
+script = ExtResource("2_b6fww")
+material_resource = ExtResource("1_0kyds")
