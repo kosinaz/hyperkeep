@@ -1,13 +1,21 @@
-[gd_scene load_steps=4 format=3 uid="uid://danx02ksdnaqj"]
+[gd_scene load_steps=7 format=3 uid="uid://danx02ksdnaqj"]
 
 [ext_resource type="Script" uid="uid://brgx2ymd1ihu2" path="res://features/features.gd" id="1_6gwt4"]
 [ext_resource type="PackedScene" uid="uid://gspq4nip321k" path="res://features/corridor.tscn" id="1_ihh26"]
-[ext_resource type="PackedScene" uid="uid://blnwr34i2sy4r" path="res://features/stairs_corridor.tscn" id="3_3qssm"]
+[ext_resource type="PackedScene" uid="uid://blnwr34i2sy4r" path="res://features/upstairs.tscn" id="3_3qssm"]
+[ext_resource type="PackedScene" uid="uid://b5mnni20md24" path="res://features/downstairs.tscn" id="3_irhsj"]
+[ext_resource type="PackedScene" uid="uid://byo7t3bvyf7cp" path="res://features/room3x2x3.tscn" id="4_dwjud"]
+[ext_resource type="PackedScene" uid="uid://buggpxdpj60wv" path="res://features/room3x1x3.tscn" id="5_p0lap"]
 
 [node name="Features" type="Node3D"]
 script = ExtResource("1_6gwt4")
 
-[node name="Corridor" parent="." instance=ExtResource("1_ihh26")]
-visible = false
+[node name="Room3x1x3" parent="." instance=ExtResource("5_p0lap")]
 
-[node name="StairsCorridor" parent="." instance=ExtResource("3_3qssm")]
+[node name="DownStairs" parent="." instance=ExtResource("3_irhsj")]
+
+[node name="Upstairs" parent="." instance=ExtResource("3_3qssm")]
+
+[node name="Corridor" parent="." instance=ExtResource("1_ihh26")]
+
+[node name="Room3x2x3" parent="." instance=ExtResource("4_dwjud")]

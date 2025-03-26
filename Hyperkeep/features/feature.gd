@@ -16,7 +16,7 @@ func _ready() -> void:
 		var cells = {}
 		var open_cells = []
 		for child in get_children():
-			child.position = child.position.rotated(Vector3.UP, i * deg_to_rad(90.0))
+			child.position = round(child.position.rotated(Vector3.UP, i * deg_to_rad(90.0)))
 			if child.name.begins_with("Void"):
 				cells[Vector3i(child.position)] = Cells.VOID
 				if child.open:
@@ -24,7 +24,9 @@ func _ready() -> void:
 			if child.name.begins_with("Wall"):
 				cells[Vector3i(child.position)] = Cells.WALL
 			if child.name.begins_with("StairsWest"):
-				cells[Vector3i(child.position)] = i + 2
+				cells[Vector3i(child.position)] = [2, 3, 4, 5][i]
+			if child.name.begins_with("StairsEast"):
+				cells[Vector3i(child.position)] = [5, 4, 3, 2][i]
 		versions.append({
 			"cells": cells,
 			"open_cells": open_cells,

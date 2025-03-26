@@ -31,7 +31,6 @@ func generate_map():
 	var features_instance: Node3D = features_scene.instantiate()
 	add_child(features_instance)
 	var features: Array = features_instance.features
-	print(features)
 	features_instance.queue_free()
 	for x in range(width):
 		for y in range(height):
@@ -86,7 +85,6 @@ func generate_map():
 		
 		for open_cell in chosen_feature.open_cells:
 			open_cells.append(cell + open_cell)
-
 
 func place_walls():
 	# Fill with walls
