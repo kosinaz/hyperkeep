@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://danx02ksdnaqj"]
+[gd_scene load_steps=15 format=3 uid="uid://danx02ksdnaqj"]
 
 [ext_resource type="Script" uid="uid://brgx2ymd1ihu2" path="res://features/features.gd" id="1_6gwt4"]
 [ext_resource type="PackedScene" uid="uid://gspq4nip321k" path="res://features/corridor.tscn" id="1_ihh26"]
@@ -10,6 +10,10 @@
 [ext_resource type="PackedScene" uid="uid://ba5try1w3tvy5" path="res://features/room5x3x5.tscn" id="8_j7buo"]
 [ext_resource type="PackedScene" uid="uid://byd6f1cfk5i5i" path="res://features/room7x3x7.tscn" id="9_itoei"]
 [ext_resource type="PackedScene" uid="uid://b16d2507sowuw" path="res://features/room9x5x9.tscn" id="10_f20oe"]
+[ext_resource type="PackedScene" uid="uid://cxjgqopkjwvmc" path="res://features/floor_grate.tscn" id="11_0aanq"]
+[ext_resource type="PackedScene" uid="uid://btvlbwyt2k3mq" path="res://features/ceil_grate.tscn" id="11_qx8gh"]
+[ext_resource type="PackedScene" uid="uid://ca5yb25ngo2y8" path="res://features/wall_grate_both.tscn" id="13_5avir"]
+[ext_resource type="PackedScene" uid="uid://cxfkrv77soj8h" path="res://features/wall_grate_left.tscn" id="13_7jd36"]
 
 [node name="Features" type="Node3D"]
 script = ExtResource("1_6gwt4")
@@ -17,10 +21,8 @@ script = ExtResource("1_6gwt4")
 [node name="Room3x1x3" parent="." instance=ExtResource("5_p0lap")]
 
 [node name="DownStairs" parent="." instance=ExtResource("3_irhsj")]
-visible = false
 
 [node name="Upstairs" parent="." instance=ExtResource("3_3qssm")]
-visible = false
 
 [node name="Corridor" parent="." instance=ExtResource("1_ihh26")]
 
@@ -33,3 +35,13 @@ visible = false
 [node name="Room7x3x7" parent="." instance=ExtResource("9_itoei")]
 
 [node name="Room9x5x9" parent="." instance=ExtResource("10_f20oe")]
+
+[node name="CeilGrate" parent="." instance=ExtResource("11_qx8gh")]
+
+[node name="FloorGrate" parent="." instance=ExtResource("11_0aanq")]
+
+[node name="WallGrateLeft" parent="." instance=ExtResource("13_7jd36")]
+
+[node name="WallGrateRight" parent="." instance=ExtResource("13_7jd36")]
+
+[node name="WallGrateBoth" parent="." instance=ExtResource("13_5avir")]

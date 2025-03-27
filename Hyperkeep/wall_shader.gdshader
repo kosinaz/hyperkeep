@@ -36,12 +36,12 @@ uniform float height_scale : hint_range(0.0, 0.05) = 0.01;
 void fragment() {
     // Get the world position of the fragment
     vec3 world_pos = (INV_VIEW_MATRIX * vec4(VERTEX, 1.0)).xyz;
-    
+
     // Determine which face we're on based on NORMAL in world space
     vec3 world_normal = normalize((INV_VIEW_MATRIX * vec4(NORMAL, 0.0)).xyz);
-    
+
     vec2 tiled_uv;
-    
+
     if (abs(world_normal.y) > 0.7) {
         // Top or bottom face
         if (world_normal.y > 0.0) {
@@ -78,17 +78,17 @@ void fragment() {
             // Z-facing faces (front or back)
             tiled_uv = vec2(world_pos.x, world_pos.y) * wall_tiling;
         }
-        
+
         // Apply wall textures
         ALBEDO = texture(wall_diffuse, tiled_uv).rgb;
         METALLIC = texture(wall_metallic, tiled_uv).r * 0.3;
         ROUGHNESS = 1.0 - (texture(wall_smoothness, tiled_uv).r * 0.8);
         NORMAL_MAP = texture(wall_normal, tiled_uv).rgb;
-        
+
         // Use edge map for edge highlighting or as a mask
         float edge = texture(wall_edge, tiled_uv).r;
         ALBEDO = mix(ALBEDO, ALBEDO * 1.2, edge);
-        
+
         // Apply height map effect
         float height = texture(wall_height, tiled_uv).r;
         NORMAL_MAP_DEPTH = height_scale * 10.0;

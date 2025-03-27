@@ -1,13 +1,16 @@
 extends Node3D
 
-@export var width: int = 29  # Number of cells in X direction
-@export var height: int = 15  # Number of levels in Y direction
-@export var depth: int = 29  # Number of cells in Z direction
+@export var width: int = 15  # Number of cells in X direction
+@export var height: int = 7  # Number of levels in Y direction
+@export var depth: int = 15  # Number of cells in Z direction
 @export var wall_scene: PackedScene = preload("res://wall.tscn")
+@export var floor_grate_scene: PackedScene = preload("res://floor_grate.tscn")
 @export var stairs_e_scene: PackedScene = preload("res://stairs_east.tscn")
 @export var stairs_w_scene: PackedScene = preload("res://stairs_west.tscn")
 @export var stairs_n_scene: PackedScene = preload("res://stairs_north.tscn")
 @export var stairs_s_scene: PackedScene = preload("res://stairs_south.tscn")
+@export var wall_grate_x_scene: PackedScene = preload("res://wall_grate_x.tscn")
+@export var wall_grate_z_scene: PackedScene = preload("res://wall_grate_z.tscn")
 @export var features_scene: PackedScene = preload("res://features/features.tscn")
 
 enum Cells {
@@ -19,10 +22,14 @@ enum Cells {
 	STAIRS_E,
 	FILLABLE_VOID,
 	FILLABLE_WALL,
+	FLOOR_GRATE,
+	WALL_GRATE_X,
+	WALL_GRATE_Z,
 }
 
 var map: Dictionary = {}
 var start: Vector3i = Vector3i()
+var end: Vector3i = Vector3i()
 
 func _ready():
 	randomize()
@@ -93,6 +100,7 @@ func generate_map():
 		
 		for open_cell in chosen_feature.open_cells:
 			open_cells.append(cell + open_cell)
+			end = cell + open_cell
 
 func place_walls():
 	# Fill with walls
@@ -100,6 +108,8 @@ func place_walls():
 		var cell_instance = null
 		if map[cell] == Cells.WALL:
 			cell_instance = wall_scene.instantiate()
+		if map[cell] == Cells.FLOOR_GRATE:
+			cell_instance = floor_grate_scene.instantiate()
 		if map[cell] == Cells.STAIRS_E:
 			cell_instance = stairs_e_scene.instantiate()
 		if map[cell] == Cells.STAIRS_W:
@@ -108,6 +118,10 @@ func place_walls():
 			cell_instance = stairs_n_scene.instantiate()
 		if map[cell] == Cells.STAIRS_S:
 			cell_instance = stairs_s_scene.instantiate()
+		if map[cell] == Cells.WALL_GRATE_X:
+			cell_instance = wall_grate_x_scene.instantiate()
+		if map[cell] == Cells.WALL_GRATE_Z:
+			cell_instance = wall_grate_z_scene.instantiate()
 		if cell_instance == null:
 			continue
 		cell_instance.position = cell

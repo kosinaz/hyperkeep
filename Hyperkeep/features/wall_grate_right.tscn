@@ -1,0 +1,50 @@
+[gd_scene load_steps=6 format=3 uid="uid://c6nj8drhyq2s6"]
+
+[ext_resource type="Script" uid="uid://bwm6hjwxbdqpw" path="res://features/feature.gd" id="1_3in06"]
+[ext_resource type="PackedScene" uid="uid://t6pwtr7h8wen" path="res://void.tscn" id="2_wa0ln"]
+[ext_resource type="PackedScene" uid="uid://b6o8xvj5rq7gx" path="res://wall.tscn" id="3_13let"]
+[ext_resource type="PackedScene" uid="uid://brdnkc881vss5" path="res://wall_grate_x.tscn" id="4_rsvl0"]
+[ext_resource type="PackedScene" uid="uid://dav7wqmoriwnn" path="res://fillable_void.tscn" id="5_fr1h3"]
+
+[node name="WallGrateRight" type="Node3D"]
+script = ExtResource("1_3in06")
+
+[node name="Void2" parent="." instance=ExtResource("2_wa0ln")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)
+
+[node name="Void3" parent="." instance=ExtResource("2_wa0ln")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+
+[node name="Void4" parent="." instance=ExtResource("2_wa0ln")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)
+open = true
+
+[node name="Wall" parent="." instance=ExtResource("3_13let")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, -1, 0)
+
+[node name="Wall2" parent="." instance=ExtResource("3_13let")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -1, 0)
+
+[node name="Wall3" parent="." instance=ExtResource("3_13let")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1, 0)
+
+[node name="Wall4" parent="." instance=ExtResource("3_13let")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0)
+
+[node name="Wall5" parent="." instance=ExtResource("3_13let")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1, 1)
+
+[node name="Wall6" parent="." instance=ExtResource("3_13let")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, -1, 1)
+
+[node name="Wall7" parent="." instance=ExtResource("3_13let")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, -1, 2)
+
+[node name="Wall8" parent="." instance=ExtResource("3_13let")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1, 2)
+
+[node name="WallGrateX" parent="." instance=ExtResource("4_rsvl0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 1)
+
+[node name="FillableVoid" parent="." instance=ExtResource("5_fr1h3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 2)

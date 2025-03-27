@@ -11,6 +11,9 @@ enum Cells {
 	STAIRS_E,
 	FILLABLE_VOID,
 	FILLABLE_WALL,
+	FLOOR_GRATE,
+	WALL_GRATE_X,
+	WALL_GRATE_Z,
 }
 
 func _ready() -> void:
@@ -25,14 +28,33 @@ func _ready() -> void:
 					open_cells.append(Vector3i(child.position))
 			if child.name.begins_with("Wall"):
 				cells[Vector3i(child.position)] = Cells.WALL
+			if child.name.begins_with("FloorGrate"):
+				cells[Vector3i(child.position)] = Cells.FLOOR_GRATE
 			if child.name.begins_with("FillableVoid"):
 				cells[Vector3i(child.position)] = Cells.FILLABLE_VOID
 			if child.name.begins_with("FillableWall"):
 				cells[Vector3i(child.position)] = Cells.FILLABLE_WALL
 			if child.name.begins_with("StairsWest"):
-				cells[Vector3i(child.position)] = [2, 3, 4, 5][i]
+				cells[Vector3i(child.position)] = [
+					Cells.STAIRS_W,
+					Cells.STAIRS_N,
+					Cells.STAIRS_S,
+					Cells.STAIRS_E,
+				][i]
 			if child.name.begins_with("StairsEast"):
-				cells[Vector3i(child.position)] = [5, 4, 3, 2][i]
+				cells[Vector3i(child.position)] = [
+					Cells.STAIRS_E,
+					Cells.STAIRS_S,
+					Cells.STAIRS_N,
+					Cells.STAIRS_W,
+				][i]
+			if child.name.begins_with("WallGrateX"):
+				cells[Vector3i(child.position)] = [
+					Cells.WALL_GRATE_X,
+					Cells.WALL_GRATE_Z,
+					Cells.WALL_GRATE_Z,
+					Cells.WALL_GRATE_X,
+				][i]
 		versions.append({
 			"cells": cells,
 			"open_cells": open_cells,

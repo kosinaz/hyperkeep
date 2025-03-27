@@ -1,0 +1,98 @@
+[gd_scene load_steps=13 format=3 uid="uid://brdnkc881vss5"]
+
+[ext_resource type="Texture2D" uid="uid://dhshmfl3kyrmj" path="res://textures/grate_1/8_diffuseOriginal.bmp" id="1_lque3"]
+[ext_resource type="Texture2D" uid="uid://b0n7ygrqgdv21" path="res://textures/grate_1/8_height.bmp" id="2_1paiu"]
+[ext_resource type="Texture2D" uid="uid://d3ek27pp62o0l" path="res://textures/grate_1/8_metallic.bmp" id="3_5ftp8"]
+[ext_resource type="Texture2D" uid="uid://bsu0ni4p11fnw" path="res://textures/grate_1/8_normal.bmp" id="4_3riqi"]
+[ext_resource type="Texture2D" uid="uid://ctuw51swbmiau" path="res://textures/grate_1/8_smoothness.bmp" id="5_pqdyf"]
+[ext_resource type="Material" uid="uid://dxw6uql2a4j7e" path="res://grate_material.tres" id="6_pspnu"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hl02s"]
+albedo_texture = ExtResource("1_lque3")
+metallic = 1.0
+metallic_texture = ExtResource("3_5ftp8")
+roughness_texture = ExtResource("5_pqdyf")
+normal_enabled = true
+normal_texture = ExtResource("4_3riqi")
+heightmap_texture = ExtResource("2_1paiu")
+uv1_scale = Vector3(1, 10, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_kuea6"]
+material = SubResource("StandardMaterial3D_hl02s")
+top_radius = 0.02
+bottom_radius = 0.02
+height = 0.8
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p54vp"]
+albedo_texture = ExtResource("1_lque3")
+metallic = 1.0
+metallic_texture = ExtResource("3_5ftp8")
+roughness_texture = ExtResource("5_pqdyf")
+normal_enabled = true
+normal_texture = ExtResource("4_3riqi")
+heightmap_texture = ExtResource("2_1paiu")
+uv1_scale = Vector3(5, 2, 5)
+uv1_triplanar = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_5p422"]
+material = SubResource("StandardMaterial3D_p54vp")
+size = Vector3(0.1, 0.1, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_vrbmm"]
+material = ExtResource("6_pspnu")
+size = Vector3(0.8, 0.1, 0.1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_q6gd6"]
+size = Vector3(1, 0.1, 1)
+
+[node name="WallGrateX" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1, 1.50996e-07, 4.37114e-08, -1.50996e-07, -1, -4.37114e-08, 4.37114e-08, -4.37114e-08, 1, 2.52787e-09, 0, 0.000407785)
+mesh = SubResource("CylinderMesh_kuea6")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1, 1.50996e-07, 4.37114e-08, -1.50996e-07, -1, -4.37114e-08, 4.37114e-08, -4.37114e-08, 1, 0.1, 0, 0.000407778)
+mesh = SubResource("CylinderMesh_kuea6")
+
+[node name="MeshInstance3D9" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1, 1.50996e-07, 4.37114e-08, -1.50996e-07, -1, -4.37114e-08, 4.37114e-08, -4.37114e-08, 1, 0.2, 0, 0.000407778)
+mesh = SubResource("CylinderMesh_kuea6")
+
+[node name="MeshInstance3D10" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1, 1.50996e-07, 4.37114e-08, -1.50996e-07, -1, -4.37114e-08, 4.37114e-08, -4.37114e-08, 1, 0.3, 0, 0.00040777)
+mesh = SubResource("CylinderMesh_kuea6")
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1, 1.50996e-07, 4.37114e-08, -1.50996e-07, -1, -4.37114e-08, 4.37114e-08, -4.37114e-08, 1, -0.1, 0, 0.000407793)
+mesh = SubResource("CylinderMesh_kuea6")
+
+[node name="MeshInstance3D11" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1, 1.50996e-07, 4.37114e-08, -1.50996e-07, -1, -4.37114e-08, 4.37114e-08, -4.37114e-08, 1, -0.2, 0, 0.000407793)
+mesh = SubResource("CylinderMesh_kuea6")
+
+[node name="MeshInstance3D12" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1, 1.50996e-07, 4.37114e-08, -1.50996e-07, -1, -4.37114e-08, 4.37114e-08, -4.37114e-08, 1, -0.3, 0, 0.0004078)
+mesh = SubResource("CylinderMesh_kuea6")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.00652745, -0.999979, 0, 0.999979, 0.00652745, -0.45, 0, 0.000407785)
+mesh = SubResource("BoxMesh_5p422")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.45, 0, 0.000407785)
+mesh = SubResource("BoxMesh_5p422")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, -0.45, 0.000241108)
+mesh = SubResource("BoxMesh_vrbmm")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.45, 0.000241108)
+mesh = SubResource("BoxMesh_vrbmm")
+
+[node name="StairsBody" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StairsBody"]
+shape = SubResource("BoxShape3D_q6gd6")

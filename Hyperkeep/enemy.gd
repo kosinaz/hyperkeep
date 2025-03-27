@@ -2,7 +2,7 @@ extends CharacterBody3D
 
 @onready var anim_player = $AnimationPlayer
 var speed = 2.0
-var gravity = 9.8
+var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 var target = null  # Reference to player node
 var rotation_speed = 6.0  # Tuned for 1-second turn (radians per second)
 var turn_threshold = 0.5  # Radians (~30 degrees) to trigger turn animation
