@@ -10,6 +10,11 @@ extends CharacterBody3D
 var bob_time = 0.0
 var initial_camera_y = 0.0
 
+# Fireball settings
+@export var fireball_scene: PackedScene  # Assign fireball.tscn in the editor
+var fireball_cooldown = 0.4  # Cooldown in seconds
+var cooldown_timer = 0.0  # Tracks time since last shot
+
 # Get the gravity from the project settings
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
@@ -37,6 +42,10 @@ func _input(event):
 				Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 func _physics_process(delta):
+	# Update cooldown timer
+	if cooldown_timer > 0:
+		cooldown_timer -= delta
+
 	# Add gravity
 	if not is_on_floor():
 		velocity.y -= gravity * delta
@@ -65,4 +74,24 @@ func _physics_process(delta):
 		bob_time = 0
 		camera.position.y = lerp(camera.position.y, initial_camera_y, delta * 5.0)
 
+	# Shoot fireball on left-click (action "attack") with cooldown
+	if Input.is_action_pressed("attack") and cooldown_timer <= 0:
+		shoot_fireball()
+		cooldown_timer = fireball_cooldown  # Reset cooldown
+
 	move_and_slide()
+
+func shoot_fireball():
+	if fireball_scene:
+		# Instance the fireball
+		var fireball = fireball_scene.instantiate()
+		
+		# Add it to the scene tree
+		get_tree().root.add_child(fireball)
+		
+		# Position it in front of the camera (player's view direction)
+		var spawn_offset = -camera.global_transform.basis.z * 1.5  # 1.5 units forward
+		fireball.global_transform.origin = camera.global_transform.origin + spawn_offset
+		
+		# Set the fireball's direction to match the camera's forward direction
+		fireball.direction = -camera.global_transform.basis.z.normalized()
