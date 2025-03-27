@@ -1,7 +1,7 @@
 extends CharacterBody3D
 
 @onready var anim_player = $AnimationPlayer
-var speed = 1.0
+var speed = 2.0
 var gravity = 9.8
 var target = null  # Reference to player node
 var rotation_speed = 6.0  # Tuned for 1-second turn (radians per second)
@@ -39,9 +39,9 @@ func _physics_process(delta):
 			velocity.x = 0  # Stop movement during turn
 			velocity.z = 0
 			if angle > 0:
-				anim_player.play("turn_right", 0.2)
+				anim_player.play("turn_right", 0.5)
 			else:
-				anim_player.play("turn_left", 0.2)
+				anim_player.play("turn_left", 0.5)
 		elif is_turning:
 			# Keep velocity zero and rotate during the turn
 			velocity.x = 0
@@ -61,18 +61,18 @@ func _physics_process(delta):
 			if abs_angle <= facing_threshold:
 				# Fully facing target, proceed with movement
 				if velocity.length() > 0:
-					anim_player.play("run", 0.2)
+					anim_player.play("run", 0.5)
 				else:
-					anim_player.play("idle", 0.2)
+					anim_player.play("idle", 0.5)
 
 		# Punch when close to target
 		if global_transform.origin.distance_to(target.global_transform.origin) < 0.75:
-			anim_player.play("attack", 0.2)
+			anim_player.play("attack", 0.5)
 			is_turning = false  # Reset turning state during attack
 	else:
 		velocity.x = 0
 		velocity.z = 0
-		anim_player.play("idle", 0.2)
+		anim_player.play("idle", 0.5)
 		is_turning = false
 
 	move_and_slide()
