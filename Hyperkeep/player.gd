@@ -5,14 +5,14 @@ extends CharacterBody3D
 @export var mouse_sensitivity = 0.002
 
 # Camera bobbing
-@export var bob_frequency = 0.0
-@export var bob_amplitude = 0.0
-var bob_time = 0.0
+@export var bob_frequency = 18
+@export var bob_amplitude = 0.02
+var bob_time = 0.01
 var initial_camera_y = 0.0
 
 # Fireball settings
 @export var fireball_scene: PackedScene  # Assign fireball.tscn in the editor
-var fireball_cooldown = 0.4  # Cooldown in seconds
+var fireball_cooldown = 0.75  # Cooldown in seconds
 var cooldown_timer = 0.0  # Tracks time since last shot
 
 # Get the gravity from the project settings
@@ -90,8 +90,9 @@ func shoot_fireball():
 		get_tree().root.add_child(fireball)
 		
 		# Position it in front of the camera (player's view direction)
-		var spawn_offset = -camera.global_transform.basis.z * 1.5  # 1.5 units forward
+		var spawn_offset = -camera.global_transform.basis.z * 0.1  # 1.5 units forward
 		fireball.global_transform.origin = camera.global_transform.origin + spawn_offset
 		
 		# Set the fireball's direction to match the camera's forward direction
 		fireball.direction = -camera.global_transform.basis.z.normalized()
+		fireball.rotation = camera.global_rotation
