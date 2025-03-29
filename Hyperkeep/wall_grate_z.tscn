@@ -93,6 +93,8 @@ mesh = SubResource("BoxMesh_vrbmm")
 
 [node name="StairsBody" type="StaticBody3D" parent="."]
 transform = Transform3D(-4.37114e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, -4.37114e-08, 1.91069e-15, 0.000346024, 0, 0.000346024)
+collision_layer = 2
+collision_mask = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StairsBody"]
 shape = SubResource("BoxShape3D_q6gd6")

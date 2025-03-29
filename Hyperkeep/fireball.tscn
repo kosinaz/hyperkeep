@@ -73,8 +73,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.140159)
 mesh = SubResource("SphereMesh_lk87q")
 
 [node name="Area3D" type="Area3D" parent="CoreMesh"]
-collision_layer = 2
-collision_mask = 5
+collision_layer = 0
+collision_mask = 9
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CoreMesh/Area3D"]
 shape = SubResource("SphereShape3D_lfcqe")
