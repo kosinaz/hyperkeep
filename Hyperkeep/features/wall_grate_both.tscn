@@ -88,10 +88,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -1)
 [node name="Wall22" parent="." instance=ExtResource("3_w6c3n")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -2)
 
-[node name="Floor7" parent="." instance=ExtResource("4_8wkmj")]
+[node name="WallGrateX" parent="." instance=ExtResource("4_8wkmj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 1)
 
-[node name="Floor8" parent="." instance=ExtResource("4_8wkmj")]
+[node name="WallGrateX2" parent="." instance=ExtResource("4_8wkmj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -1)
 
 [node name="FillableVoid" parent="." instance=ExtResource("5_wsodv")]

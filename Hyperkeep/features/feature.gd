@@ -10,7 +10,7 @@ enum Blocks {
 	STAIRS_S,
 	STAIRS_E,
 	FILLABLE_VOID,
-	FILLABLE_WALL,
+	FILLABLE_FLOOR,
 	FLOOR_GRATE,
 	WALL_GRATE_X,
 	WALL_GRATE_Z,
@@ -39,7 +39,7 @@ func _ready() -> void:
 			if child.name.begins_with("FillableVoid"):
 				cells[Vector3i(child.position)] = Blocks.FILLABLE_VOID
 			if child.name.begins_with("FillableWall"):
-				cells[Vector3i(child.position)] = Blocks.FILLABLE_WALL
+				cells[Vector3i(child.position)] = Blocks.FILLABLE_FLOOR
 			if child.name.begins_with("StairsWest"):
 				cells[Vector3i(child.position)] = [
 					Blocks.STAIRS_W,

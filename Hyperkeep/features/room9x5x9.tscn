@@ -1874,50 +1874,47 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, -1, -2)
 [node name="FillableVoid19" parent="." instance=ExtResource("4_o0ntp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 3, -2)
 
-[node name="FillableWall16" parent="." instance=ExtResource("5_emsd3")]
+[node name="FillableFloor4" parent="." instance=ExtResource("5_emsd3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 2, -2)
 
 [node name="FillableVoid21" parent="." instance=ExtResource("4_o0ntp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 3, 2)
 
-[node name="FillableWall17" parent="." instance=ExtResource("5_emsd3")]
+[node name="FillableFloor3" parent="." instance=ExtResource("5_emsd3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 2, 2)
 
 [node name="FillableVoid22" parent="." instance=ExtResource("4_o0ntp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 3, 4)
 
-[node name="FillableWall18" parent="." instance=ExtResource("5_emsd3")]
+[node name="FillableFloor2" parent="." instance=ExtResource("5_emsd3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 2, 4)
 
 [node name="FillableVoid23" parent="." instance=ExtResource("4_o0ntp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 3, 4)
 
-[node name="FillableWall19" parent="." instance=ExtResource("5_emsd3")]
+[node name="FillableFloor" parent="." instance=ExtResource("5_emsd3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 2, 4)
 
 [node name="FillableVoid24" parent="." instance=ExtResource("4_o0ntp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 3, 2)
 
-[node name="FillableWall20" parent="." instance=ExtResource("5_emsd3")]
+[node name="FillableFloor5" parent="." instance=ExtResource("5_emsd3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 2, 2)
 
 [node name="FillableVoid25" parent="." instance=ExtResource("4_o0ntp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 3, -2)
 
-[node name="FillableWall21" parent="." instance=ExtResource("5_emsd3")]
+[node name="FillableFloor6" parent="." instance=ExtResource("5_emsd3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 2, -2)
 
 [node name="FillableVoid26" parent="." instance=ExtResource("4_o0ntp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 3, -4)
 
-[node name="FillableWall22" parent="." instance=ExtResource("5_emsd3")]
+[node name="FillableFloor7" parent="." instance=ExtResource("5_emsd3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 2, -4)
 
 [node name="FillableVoid27" parent="." instance=ExtResource("4_o0ntp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 3, -4)
 
-[node name="FillableWall23" parent="." instance=ExtResource("5_emsd3")]
+[node name="FillableFloor8" parent="." instance=ExtResource("5_emsd3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 2, -4)
-
-[node name="FillableWall36" parent="." instance=ExtResource("5_emsd3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 2, -2)

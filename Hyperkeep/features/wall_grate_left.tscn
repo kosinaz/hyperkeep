@@ -67,7 +67,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1, -2)
 [node name="Floor4" parent="." instance=ExtResource("3_jvd5d")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, -1, -2)
 
-[node name="Floor5" parent="." instance=ExtResource("4_epnf5")]
+[node name="WallGrateX" parent="." instance=ExtResource("4_epnf5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -1)
 
 [node name="FillableVoid2" parent="." instance=ExtResource("5_jvd5d")]

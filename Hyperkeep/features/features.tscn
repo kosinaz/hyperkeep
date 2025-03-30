@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://danx02ksdnaqj"]
+[gd_scene load_steps=17 format=3 uid="uid://danx02ksdnaqj"]
 
 [ext_resource type="Script" uid="uid://brgx2ymd1ihu2" path="res://features/features.gd" id="1_6gwt4"]
 [ext_resource type="PackedScene" uid="uid://gspq4nip321k" path="res://features/corridor.tscn" id="1_ihh26"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://ca5yb25ngo2y8" path="res://features/wall_grate_both.tscn" id="13_5avir"]
 [ext_resource type="PackedScene" uid="uid://cxfkrv77soj8h" path="res://features/wall_grate_left.tscn" id="13_7jd36"]
 [ext_resource type="PackedScene" uid="uid://c6nj8drhyq2s6" path="res://features/wall_grate_right.tscn" id="14_2mbtq"]
+[ext_resource type="PackedScene" uid="uid://cu7y3jn2ui34f" path="res://features/floor_hole.tscn" id="16_5drm0"]
 
 [node name="Features" type="Node3D"]
 script = ExtResource("1_6gwt4")
@@ -46,3 +47,6 @@ script = ExtResource("1_6gwt4")
 [node name="WallGrateRight" parent="." instance=ExtResource("14_2mbtq")]
 
 [node name="WallGrateBoth" parent="." instance=ExtResource("13_5avir")]
+
+[node name="FloorHole" parent="." instance=ExtResource("16_5drm0")]
+visible = false

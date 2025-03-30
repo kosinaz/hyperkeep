@@ -564,14 +564,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 2, -2)
 [node name="FillableVoid20" parent="." instance=ExtResource("4_qr61y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 2, 2)
 
-[node name="FillableWall3" parent="." instance=ExtResource("5_l36s4")]
+[node name="FillableFloor3" parent="." instance=ExtResource("5_l36s4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1, 2)
 
-[node name="FillableWall7" parent="." instance=ExtResource("5_l36s4")]
+[node name="FillableFloor4" parent="." instance=ExtResource("5_l36s4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 1, 2)
 
-[node name="FillableWall11" parent="." instance=ExtResource("5_l36s4")]
+[node name="FillableFloor" parent="." instance=ExtResource("5_l36s4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 1, -2)
 
-[node name="FillableWall15" parent="." instance=ExtResource("5_l36s4")]
+[node name="FillableFloor2" parent="." instance=ExtResource("5_l36s4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1, -2)

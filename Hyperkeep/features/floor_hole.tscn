@@ -1,0 +1,70 @@
+[gd_scene load_steps=4 format=3 uid="uid://cu7y3jn2ui34f"]
+
+[ext_resource type="Script" uid="uid://bwm6hjwxbdqpw" path="res://features/feature.gd" id="1_e4p1a"]
+[ext_resource type="PackedScene" uid="uid://t6pwtr7h8wen" path="res://void.tscn" id="2_c8u1k"]
+[ext_resource type="PackedScene" uid="uid://b6o8xvj5rq7gx" path="res://wall.tscn" id="3_gmv8o"]
+
+[node name="FloorHole" type="Node3D"]
+script = ExtResource("1_e4p1a")
+
+[node name="Void" parent="." instance=ExtResource("2_c8u1k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+
+[node name="Void2" parent="." instance=ExtResource("2_c8u1k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)
+open = true
+
+[node name="Void3" parent="." instance=ExtResource("2_c8u1k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, -1, 0)
+
+[node name="Void4" parent="." instance=ExtResource("2_c8u1k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, -2, 0)
+open = true
+
+[node name="Wall" parent="." instance=ExtResource("3_gmv8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -1, 0)
+
+[node name="Wall17" parent="." instance=ExtResource("3_gmv8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -2, 0)
+
+[node name="Floor" parent="." instance=ExtResource("3_gmv8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, -3, 0)
+
+[node name="Ceil" parent="." instance=ExtResource("3_gmv8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1, 0)
+
+[node name="Ceil2" parent="." instance=ExtResource("3_gmv8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0)
+
+[node name="Wall6" parent="." instance=ExtResource("3_gmv8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 1)
+
+[node name="Wall7" parent="." instance=ExtResource("3_gmv8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1)
+
+[node name="Wall8" parent="." instance=ExtResource("3_gmv8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -1)
+
+[node name="Wall10" parent="." instance=ExtResource("3_gmv8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, -1, 1)
+
+[node name="Wall11" parent="." instance=ExtResource("3_gmv8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, -1, -1)
+
+[node name="Wall12" parent="." instance=ExtResource("3_gmv8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, -2, 1)
+
+[node name="Wall14" parent="." instance=ExtResource("3_gmv8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 0)
+
+[node name="Wall15" parent="." instance=ExtResource("3_gmv8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, -1, 0)
+
+[node name="Wall16" parent="." instance=ExtResource("3_gmv8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, -2, 0)
+
+[node name="Wall13" parent="." instance=ExtResource("3_gmv8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, -2, -1)
+
+[node name="Wall9" parent="." instance=ExtResource("3_gmv8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -1)

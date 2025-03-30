@@ -4,3 +4,5 @@
 
 [node name="Map" type="Node3D"]
 script = ExtResource("1_wijl4")
+chunk_position = Vector2i(-3, -3)
+chunk_size = Vector2i(15, 15)

@@ -1,6 +1,8 @@
 extends Node3D
 
-@export var number_of_features: int = 125
+@export var number_of_features: int = 300
+@export var chunk_position: Vector2i = Vector2i(-10, -10)
+@export var chunk_size: Vector2i = Vector2i(21, 21)
 @export var wall_scene: PackedScene = preload("res://wall.tscn")
 @export var floor_grate_scene: PackedScene = preload("res://floor_grate.tscn")
 @export var stairs_e_scene: PackedScene = preload("res://stairs_east.tscn")
@@ -23,7 +25,7 @@ enum Blocks {
 	STAIRS_S,
 	STAIRS_E,
 	FILLABLE_VOID,
-	FILLABLE_WALL,
+	FILLABLE_FLOOR,
 	FLOOR_GRATE,
 	WALL_GRATE_X,
 	WALL_GRATE_Z,
@@ -54,7 +56,10 @@ func generate_map():
 	map[Vector3i(0, 0, -1)] = Blocks.WALL
 	
 	# Carve the tunnels
-	for _i in range(number_of_features):
+	for i in number_of_features:
+		if open_cells.size() == 0:
+			print("filled at ", i)
+			break
 		# Choose a random cell that can be continued
 		open_cells.shuffle()
 		var cell: Vector3i = open_cells[0]
@@ -69,9 +74,18 @@ func generate_map():
 				# Ignore walls
 				if block == Blocks.WALL:
 					continue
-				
-				# Non-tracked cells are always available.
 				var next_cell = cell + feature_cell
+				
+				# If outside of current chunk, skip
+				if not Rect2i(chunk_position, chunk_size).has_point(Vector2i(next_cell.x, next_cell.z)):
+					available = false
+					continue
+				
+				if not(range(-1, 9).has(next_cell.y)):
+					available = false
+					continue
+				
+				# Non-tracked cells are always available
 				if not map.has(next_cell):
 					continue
 				var next_block = map[next_cell]
@@ -80,12 +94,25 @@ func generate_map():
 				if next_block == Blocks.WALL:
 					continue
 				
+				# Void can never be replaced.
+				if next_block == Blocks.VOID:
+					available = false
+					continue
+				
+				# The rest of the matching blocks can be skipped
+				if next_block == block:
+					continue
+				
 				# Voids can replace fillable voids
 				if next_block == Blocks.FILLABLE_VOID and block == Blocks.VOID:
 					continue
 				
-				# Walls can replace fillable walls
-				if next_block == Blocks.FILLABLE_WALL and block == Blocks.WALL:
+				# Voids can replace fillable voids
+				if next_block == Blocks.FILLABLE_FLOOR and block == Blocks.FLOOR:
+					continue
+					
+				# Floor grate can be considered as ceil.
+				if next_block == Blocks.FLOOR_GRATE and block == Blocks.CEIL:
 					continue
 					
 				# Everything else would be invalid placement
@@ -96,10 +123,11 @@ func generate_map():
 				available_features.append(feature)
 		
 		# If the cell can't be continued after this, remove it from the list of open cells
+		if available_features == []:
+			open_cells.pop_front()
+			continue
 		if available_features.size() < 2:
 			open_cells.pop_front()
-			if available_features == []:
-				continue
 		
 		# Extend the map data with a randomly chosen available feature
 		available_features.shuffle()
@@ -108,6 +136,8 @@ func generate_map():
 			var next_cell = cell + feature_cell
 			if map.has(next_cell):
 				if map[next_cell] == Blocks.VOID:
+					continue
+				if map[next_cell] == Blocks.FLOOR_GRATE:
 					continue
 				if map[next_cell] == Blocks.WALL_GRATE_X:
 					continue

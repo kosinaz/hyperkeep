@@ -16,7 +16,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)
 open = true
 
-[node name="Floor2" parent="." instance=ExtResource("3_6mkwr")]
+[node name="Wall" parent="." instance=ExtResource("3_6mkwr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -1, 0)
 
 [node name="Wall17" parent="." instance=ExtResource("3_6mkwr")]
