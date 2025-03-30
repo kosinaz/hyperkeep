@@ -19,40 +19,40 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)
 open = true
 
-[node name="Wall" parent="." instance=ExtResource("3_w6c3n")]
+[node name="Floor" parent="." instance=ExtResource("3_w6c3n")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, -1, 0)
 
-[node name="Wall2" parent="." instance=ExtResource("3_w6c3n")]
+[node name="Floor2" parent="." instance=ExtResource("3_w6c3n")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -1, 0)
 
-[node name="Wall3" parent="." instance=ExtResource("3_w6c3n")]
+[node name="Ceil" parent="." instance=ExtResource("3_w6c3n")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1, 0)
 
-[node name="Wall4" parent="." instance=ExtResource("3_w6c3n")]
+[node name="Ceil2" parent="." instance=ExtResource("3_w6c3n")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0)
 
-[node name="Wall5" parent="." instance=ExtResource("3_w6c3n")]
+[node name="Ceil3" parent="." instance=ExtResource("3_w6c3n")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1, 1)
 
-[node name="Wall6" parent="." instance=ExtResource("3_w6c3n")]
+[node name="Floor3" parent="." instance=ExtResource("3_w6c3n")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, -1, 1)
 
-[node name="Wall7" parent="." instance=ExtResource("3_w6c3n")]
+[node name="Floor4" parent="." instance=ExtResource("3_w6c3n")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, -1, -1)
 
-[node name="Wall10" parent="." instance=ExtResource("3_w6c3n")]
+[node name="Floor5" parent="." instance=ExtResource("3_w6c3n")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, -1, -2)
 
-[node name="Wall11" parent="." instance=ExtResource("3_w6c3n")]
+[node name="Floor6" parent="." instance=ExtResource("3_w6c3n")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, -1, 2)
 
-[node name="Wall12" parent="." instance=ExtResource("3_w6c3n")]
+[node name="Ceil4" parent="." instance=ExtResource("3_w6c3n")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1, 2)
 
-[node name="Wall8" parent="." instance=ExtResource("3_w6c3n")]
+[node name="Ceil5" parent="." instance=ExtResource("3_w6c3n")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1, -1)
 
-[node name="Wall9" parent="." instance=ExtResource("3_w6c3n")]
+[node name="Ceil6" parent="." instance=ExtResource("3_w6c3n")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1, -2)
 
 [node name="Wall13" parent="." instance=ExtResource("3_w6c3n")]
@@ -88,10 +88,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -1)
 [node name="Wall22" parent="." instance=ExtResource("3_w6c3n")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -2)
 
-[node name="WallGrateX" parent="." instance=ExtResource("4_8wkmj")]
+[node name="Floor7" parent="." instance=ExtResource("4_8wkmj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 1)
 
-[node name="WallGrateX2" parent="." instance=ExtResource("4_8wkmj")]
+[node name="Floor8" parent="." instance=ExtResource("4_8wkmj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -1)
 
 [node name="FillableVoid" parent="." instance=ExtResource("5_wsodv")]

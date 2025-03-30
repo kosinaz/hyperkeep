@@ -15,13 +15,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, -1, 0)
 open = true
 
-[node name="Wall3" parent="." instance=ExtResource("3_kcuas")]
+[node name="Ceil" parent="." instance=ExtResource("3_kcuas")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)
 
-[node name="Wall7" parent="." instance=ExtResource("3_kcuas")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1, 0)
-
-[node name="Wall4" parent="." instance=ExtResource("3_kcuas")]
+[node name="Ceil2" parent="." instance=ExtResource("3_kcuas")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0)
 
 [node name="Wall8" parent="." instance=ExtResource("3_kcuas")]
@@ -45,10 +42,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -1, -1)
 [node name="Wall13" parent="." instance=ExtResource("3_kcuas")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -1)
 
-[node name="Wall5" parent="." instance=ExtResource("3_kcuas")]
+[node name="Floor" parent="." instance=ExtResource("3_kcuas")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, -2, 0)
 
-[node name="Wall6" parent="." instance=ExtResource("3_kcuas")]
+[node name="Floor2" parent="." instance=ExtResource("3_kcuas")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -2, 0)
 
 [node name="StairsEast" parent="." instance=ExtResource("4_2i83s")]

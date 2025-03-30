@@ -20,41 +20,29 @@
 script = ExtResource("1_6gwt4")
 
 [node name="DownStairs" parent="." instance=ExtResource("3_irhsj")]
-visible = false
 
 [node name="Upstairs" parent="." instance=ExtResource("3_3qssm")]
-visible = false
 
 [node name="Corridor" parent="." instance=ExtResource("1_ihh26")]
 
 [node name="Room3x1x3" parent="." instance=ExtResource("5_p0lap")]
-visible = false
 
 [node name="Room3x2x3" parent="." instance=ExtResource("4_dwjud")]
-visible = false
 
 [node name="Room5x2x5" parent="." instance=ExtResource("7_5epxl")]
-visible = false
 
 [node name="Room5x3x5" parent="." instance=ExtResource("8_j7buo")]
-visible = false
 
 [node name="Room7x3x7" parent="." instance=ExtResource("9_itoei")]
-visible = false
 
 [node name="Room9x5x9" parent="." instance=ExtResource("10_f20oe")]
-visible = false
 
 [node name="CeilGrate" parent="." instance=ExtResource("11_qx8gh")]
-visible = false
 
 [node name="FloorGrate" parent="." instance=ExtResource("11_0aanq")]
-visible = false
 
 [node name="WallGrateLeft" parent="." instance=ExtResource("13_7jd36")]
-visible = false
 
 [node name="WallGrateRight" parent="." instance=ExtResource("14_2mbtq")]
-visible = false
 
 [node name="WallGrateBoth" parent="." instance=ExtResource("13_5avir")]

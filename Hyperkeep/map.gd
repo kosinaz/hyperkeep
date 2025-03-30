@@ -1,6 +1,6 @@
 extends Node3D
 
-@export var number_of_features: int = 25
+@export var number_of_features: int = 125
 @export var wall_scene: PackedScene = preload("res://wall.tscn")
 @export var floor_grate_scene: PackedScene = preload("res://floor_grate.tscn")
 @export var stairs_e_scene: PackedScene = preload("res://stairs_east.tscn")
@@ -27,6 +27,8 @@ enum Blocks {
 	FLOOR_GRATE,
 	WALL_GRATE_X,
 	WALL_GRATE_Z,
+	FLOOR,
+	CEIL,
 }
 
 var map: Dictionary = {}
@@ -57,28 +59,38 @@ func generate_map():
 		open_cells.shuffle()
 		var cell: Vector3i = open_cells[0]
 		
-		# Collect the available directions
+		# Collect the available features
 		var available_features = []
 		for feature in features:
 			var available: bool = true
 			for feature_cell in feature.cells.keys():
-				var current_cell = feature.cells[feature_cell]
-				# Walls can be placed anywhere, they are anyway the outer parts of any feature,
-				# and they won't be placed, if the map already contains void-like cells there.
-				if current_cell == Blocks.WALL:
-					continue
-				# Non-tracked cells are always available.
-				if not map.has(cell + feature_cell):
+				var block = feature.cells[feature_cell]
+				
+				# Ignore walls
+				if block == Blocks.WALL:
 					continue
 				
-				var next_cell = map[cell + feature_cell]
-				if not (
-					next_cell == Blocks.WALL or
-					(next_cell == Blocks.FILLABLE_VOID and current_cell == Blocks.VOID) #or
-					#(next_cell == Blocks.FILLABLE_WALL and current_cell == Blocks.WALL)
-				):
-					available = false
+				# Non-tracked cells are always available.
+				var next_cell = cell + feature_cell
+				if not map.has(next_cell):
 					continue
+				var next_block = map[next_cell]
+				
+				# Walls can be always replaced by newly added features
+				if next_block == Blocks.WALL:
+					continue
+				
+				# Voids can replace fillable voids
+				if next_block == Blocks.FILLABLE_VOID and block == Blocks.VOID:
+					continue
+				
+				# Walls can replace fillable walls
+				if next_block == Blocks.FILLABLE_WALL and block == Blocks.WALL:
+					continue
+					
+				# Everything else would be invalid placement
+				available = false
+				
 			# Only add as available if all cells of the feature are available
 			if available:
 				available_features.append(feature)
@@ -89,18 +101,19 @@ func generate_map():
 			if available_features == []:
 				continue
 		
-		# Carve out the randomly chosen feature
+		# Extend the map data with a randomly chosen available feature
 		available_features.shuffle()
 		var chosen_feature: Dictionary = available_features[0]
 		for feature_cell in chosen_feature.cells.keys():
-			if map.has(cell + feature_cell):
-				if map[cell + feature_cell] == Blocks.VOID:
+			var next_cell = cell + feature_cell
+			if map.has(next_cell):
+				if map[next_cell] == Blocks.VOID:
 					continue
-				if map[cell + feature_cell] == Blocks.WALL_GRATE_X:
+				if map[next_cell] == Blocks.WALL_GRATE_X:
 					continue
-				if map[cell + feature_cell] == Blocks.WALL_GRATE_Z:
+				if map[next_cell] == Blocks.WALL_GRATE_Z:
 					continue
-			map[cell + feature_cell] = chosen_feature.cells[feature_cell]
+			map[next_cell] = chosen_feature.cells[feature_cell]
 		
 		for open_cell in chosen_feature.open_cells:
 			open_cells.append(cell + open_cell)
@@ -109,7 +122,7 @@ func place_walls():
 	# Fill with walls
 	for cell in map:
 		var cell_instance = null
-		if map[cell] == Blocks.WALL:
+		if [Blocks.WALL, Blocks.CEIL, Blocks.FLOOR].has(map[cell]):
 			cell_instance = wall_scene.instantiate()
 		if map[cell] == Blocks.FLOOR_GRATE:
 			cell_instance = floor_grate_scene.instantiate()

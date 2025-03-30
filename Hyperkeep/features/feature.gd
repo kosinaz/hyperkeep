@@ -14,6 +14,8 @@ enum Blocks {
 	FLOOR_GRATE,
 	WALL_GRATE_X,
 	WALL_GRATE_Z,
+	FLOOR,
+	CEIL
 }
 
 func _ready() -> void:
@@ -28,6 +30,10 @@ func _ready() -> void:
 					open_cells.append(Vector3i(child.position))
 			if child.name.begins_with("Wall"):
 				cells[Vector3i(child.position)] = Blocks.WALL
+			if child.name.begins_with("Floor"):
+				cells[Vector3i(child.position)] = Blocks.FLOOR
+			if child.name.begins_with("Ceil"):
+				cells[Vector3i(child.position)] = Blocks.CEIL
 			if child.name.begins_with("FloorGrate"):
 				cells[Vector3i(child.position)] = Blocks.FLOOR_GRATE
 			if child.name.begins_with("FillableVoid"):
