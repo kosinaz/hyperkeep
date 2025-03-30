@@ -1,0 +1,69 @@
+[gd_scene load_steps=5 format=3 uid="uid://b3ong3apsl2b1"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mjwfk"]
+shading_mode = 0
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_u6kcn"]
+material = SubResource("StandardMaterial3D_mjwfk")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ydfdo"]
+shading_mode = 0
+albedo_color = Color(0, 0, 1, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_m6qj8"]
+material = SubResource("StandardMaterial3D_ydfdo")
+size = Vector3(0.01, 1, 0.01)
+
+[node name="WallBlue" type="Node3D"]
+
+[node name="Interior" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_u6kcn")
+
+[node name="Edge" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 0.5)
+mesh = SubResource("BoxMesh_m6qj8")
+
+[node name="Edge2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 0.5)
+mesh = SubResource("BoxMesh_m6qj8")
+
+[node name="Edge3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, -0.5)
+mesh = SubResource("BoxMesh_m6qj8")
+
+[node name="Edge4" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, -0.5)
+mesh = SubResource("BoxMesh_m6qj8")
+
+[node name="Edge5" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.5, -0.5, -2.18557e-08)
+mesh = SubResource("BoxMesh_m6qj8")
+
+[node name="Edge6" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -0.5, -0.5, -2.18557e-08)
+mesh = SubResource("BoxMesh_m6qj8")
+
+[node name="Edge7" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.5, 0.5, 2.18557e-08)
+mesh = SubResource("BoxMesh_m6qj8")
+
+[node name="Edge8" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -0.5, 0.5, 2.18557e-08)
+mesh = SubResource("BoxMesh_m6qj8")
+
+[node name="Edge9" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 1.91069e-15, -4.37114e-08, -0.5, -0.5)
+mesh = SubResource("BoxMesh_m6qj8")
+
+[node name="Edge10" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 1.91069e-15, 0, -0.5, 0.5)
+mesh = SubResource("BoxMesh_m6qj8")
+
+[node name="Edge11" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 1.91069e-15, 0, 0.5, -0.5)
+mesh = SubResource("BoxMesh_m6qj8")
+
+[node name="Edge12" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 1.91069e-15, 4.37114e-08, 0.5, 0.5)
+mesh = SubResource("BoxMesh_m6qj8")
