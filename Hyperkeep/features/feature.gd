@@ -2,7 +2,7 @@ extends Node
 
 var versions = []
 
-enum Cells {
+enum Blocks {
 	VOID,
 	WALL,
 	STAIRS_W,
@@ -23,37 +23,37 @@ func _ready() -> void:
 		for child in get_children():
 			child.position = round(child.position.rotated(Vector3.UP, i * deg_to_rad(90.0)))
 			if child.name.begins_with("Void"):
-				cells[Vector3i(child.position)] = Cells.VOID
+				cells[Vector3i(child.position)] = Blocks.VOID
 				if child.open:
 					open_cells.append(Vector3i(child.position))
 			if child.name.begins_with("Wall"):
-				cells[Vector3i(child.position)] = Cells.WALL
+				cells[Vector3i(child.position)] = Blocks.WALL
 			if child.name.begins_with("FloorGrate"):
-				cells[Vector3i(child.position)] = Cells.FLOOR_GRATE
+				cells[Vector3i(child.position)] = Blocks.FLOOR_GRATE
 			if child.name.begins_with("FillableVoid"):
-				cells[Vector3i(child.position)] = Cells.FILLABLE_VOID
+				cells[Vector3i(child.position)] = Blocks.FILLABLE_VOID
 			if child.name.begins_with("FillableWall"):
-				cells[Vector3i(child.position)] = Cells.FILLABLE_WALL
+				cells[Vector3i(child.position)] = Blocks.FILLABLE_WALL
 			if child.name.begins_with("StairsWest"):
 				cells[Vector3i(child.position)] = [
-					Cells.STAIRS_W,
-					Cells.STAIRS_N,
-					Cells.STAIRS_S,
-					Cells.STAIRS_E,
+					Blocks.STAIRS_W,
+					Blocks.STAIRS_N,
+					Blocks.STAIRS_S,
+					Blocks.STAIRS_E,
 				][i]
 			if child.name.begins_with("StairsEast"):
 				cells[Vector3i(child.position)] = [
-					Cells.STAIRS_E,
-					Cells.STAIRS_S,
-					Cells.STAIRS_N,
-					Cells.STAIRS_W,
+					Blocks.STAIRS_E,
+					Blocks.STAIRS_S,
+					Blocks.STAIRS_N,
+					Blocks.STAIRS_W,
 				][i]
 			if child.name.begins_with("WallGrateX"):
 				cells[Vector3i(child.position)] = [
-					Cells.WALL_GRATE_X,
-					Cells.WALL_GRATE_Z,
-					Cells.WALL_GRATE_Z,
-					Cells.WALL_GRATE_X,
+					Blocks.WALL_GRATE_X,
+					Blocks.WALL_GRATE_Z,
+					Blocks.WALL_GRATE_Z,
+					Blocks.WALL_GRATE_X,
 				][i]
 		versions.append({
 			"cells": cells,

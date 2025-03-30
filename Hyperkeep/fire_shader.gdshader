@@ -43,21 +43,21 @@ void fragment() {
 	vec3 n = normalize(normal_interp);
 	vec3 view_dir = normalize(CAMERA_POSITION_WORLD - world_pos);
 	float rim = pow(1.0 - clamp(dot(n, view_dir), 0.0, 1.0), rim_power);
-	
+
 	// Animate procedural noise
 	float time = TIME * speed;
 	vec3 noise_pos = world_pos * noise_scale + vec3(0.0, time, 0.0);
 	float noise_value = noise(noise_pos);
-	
+
 	// Add some variation
 	noise_value *= random(world_pos + vec3(0.0, time, 0.0));
-	
+
 	// Mix colors based on noise and rim effect
 	vec4 color = mix(base_color, flame_color, noise_value * rim);
-	
+
 	// Apply alpha based on noise and rim
 	float alpha = clamp(noise_value * rim * 2.0, 0.0, 1.0);
-	
+
 	// Final color
 	ALBEDO = color.rgb;
 	ALPHA = alpha;

@@ -19,6 +19,9 @@ open = true
 [node name="Wall2" parent="." instance=ExtResource("3_6mkwr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -1, 0)
 
+[node name="Wall17" parent="." instance=ExtResource("3_6mkwr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -2, 0)
+
 [node name="Wall5" parent="." instance=ExtResource("3_6mkwr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, -3, 0)
 
@@ -27,6 +30,39 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1, 0)
 
 [node name="Wall4" parent="." instance=ExtResource("3_6mkwr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0)
+
+[node name="Wall6" parent="." instance=ExtResource("3_6mkwr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 1)
+
+[node name="Wall7" parent="." instance=ExtResource("3_6mkwr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1)
+
+[node name="Wall8" parent="." instance=ExtResource("3_6mkwr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -1)
+
+[node name="Wall10" parent="." instance=ExtResource("3_6mkwr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, -1, 1)
+
+[node name="Wall11" parent="." instance=ExtResource("3_6mkwr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, -1, -1)
+
+[node name="Wall12" parent="." instance=ExtResource("3_6mkwr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, -2, 1)
+
+[node name="Wall14" parent="." instance=ExtResource("3_6mkwr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 0)
+
+[node name="Wall15" parent="." instance=ExtResource("3_6mkwr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, -1, 0)
+
+[node name="Wall16" parent="." instance=ExtResource("3_6mkwr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, -2, 0)
+
+[node name="Wall13" parent="." instance=ExtResource("3_6mkwr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, -2, -1)
+
+[node name="Wall9" parent="." instance=ExtResource("3_6mkwr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -1)
 
 [node name="FloorGrate" parent="." instance=ExtResource("4_0dqpp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, -1, 0)
